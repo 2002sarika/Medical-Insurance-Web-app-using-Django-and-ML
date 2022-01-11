@@ -1,0 +1,21 @@
+{% extends 'partials/base.html' %}
+{% block title %}Home{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row-mt-4" ">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow" style="width:600px; margin:auto; position:relative; top:30px;">
+                <div class="card-body " style="height:550px;">
+                <form method="POST" style="line-height:60px;">
+                    {% csrf_token %}
+                    {{form | crispy}}<br>
+                    <input class="btn btn-info" type="submit" value="Make Prediction">
+               </form>
+            </div>
+            </div>
+        </div>
+    </div>
+   </div>
+{% endblock %}

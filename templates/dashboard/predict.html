@@ -1,0 +1,36 @@
+{% extends 'partials/base.html' %}
+{% block title %}All Prediction{% endblock %}
+
+{% block content %}
+<div class="container" >
+    <div class="row-mt-5">
+        <div class="col-md-8 offset-md-2">
+          
+            <table class="table" style="background-color:white;">
+                <thead>
+                  <tr>
+                    <th scope="col">Age</th>
+                    <th scope="col">BMI</th>
+                    <th scope="col">Smoker</th>
+                    <th scope="col">Children</th>
+                    <th scope="col">Charges</th>
+                  </tr>
+                  
+                </thead>
+                <tbody>
+                  {% for data in predicted_charge %}
+                  <tr>
+                    <th scope="row">{{data.age}}</th>
+                    <td>{{data.bmi}}</td>
+                    <td>{{data.smoker}}</td>
+                    <td>{{data.children}}</td>
+                    <td>{{data.predictions}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+                 
+        </div>
+    </div>
+   </div>
+{% endblock %}
